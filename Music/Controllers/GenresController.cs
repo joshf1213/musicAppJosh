@@ -42,6 +42,29 @@ namespace Music.Controllers
             return View(genre);
         }
 
+        [HttpGet]
+        public ActionResult SortByGenre(int? id)
+        {
+
+
+
+
+            if (id != null)
+            {
+
+                var genre = db.Genres.Where(a => a.GenreID == id);
+                ViewBag.header = genre.First().Name;
+                var albums = db.Albums
+                    .Include(a => a.Artist)
+                    .Include(a => a.Genre)
+                    .Where(a => a.GenreID == id);
+                return View("GenreSort", albums.ToList());
+            }
+            else
+            {
+                return View();
+            }
+        }
 
     }
 }

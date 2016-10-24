@@ -202,6 +202,7 @@
     <Content Include="Views\Genres\Create.cshtml" />
     <Content Include="Views\Genres\Index.cshtml" />
     <Content Include="Views\Artists\Details.cshtml" />
+    <Content Include="Views\Genres\GenreSort.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
